@@ -12,7 +12,7 @@ host.
 ## Description
 
 HyperVBackup is a PowerShell module that allows users to backup VMs from a Hyper-V
-host. The backups can be stored in a directory or compressed to a .7z file.
+host. The module backups can be stored in a directory or compressed to a .7z file.
 
 ## Installation of HyperVBackup
 
