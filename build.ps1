@@ -48,7 +48,6 @@ if ($env:APPVEYOR_REPO_BRANCH -ne 'master') {
     Import-Module -Name "$PSScriptRoot\$ModuleName" -Force
     New-MarkdownHelp -Module $ModuleName -OutputFolder '.\docs\' -Force
     New-ExternalHelp -Path '.\docs\' -OutputPath ".\docs\en-US\" -Force
-    . .\docs.ps1
     Write-Host -Object ''
 
     # Publish the new version to the PowerShell Gallery
