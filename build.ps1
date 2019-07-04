@@ -34,6 +34,11 @@ if ($env:APPVEYOR_REPO_BRANCH -ne 'master') {
         }
 
         Update-ModuleManifest @Splat
+
+        (Get-Content -Path $ManifestPath) -replace "PSGet_$ModuleName", "$ModuleName" | Set-Content -Path $ManifestPath
+        (Get-Content -Path $ManifestPath) -replace 'NewManifest', $ModuleName | Set-Content -Path $ManifestPath
+        (Get-Content -Path $ManifestPath) -replace 'FunctionsToExport = ', 'FunctionsToExport = @(' | Set-Content -Path $ManifestPath -Force
+        (Get-Content -Path $ManifestPath) -replace "$($FunctionList[-1])'", "$($FunctionList[-1])')" | Set-Content -Path $ManifestPath -Force
     } catch {
         throw $_
     }
