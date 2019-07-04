@@ -28,7 +28,7 @@ if ($env:APPVEYOR_REPO_BRANCH -ne 'master') {
         $FunctionList = ((Get-ChildItem -Path .\$ModuleName\Public).BaseName)
         $Splat = @{
             'Path'              = $ManifestPath
-            'ModuleVersion'     = '1.0.0.0'
+            'ModuleVersion'     = $NewVersion
             'FunctionsToExport' = $FunctionList
             'Copyright'         = "(c) 2019-$( (Get-Date).Year ) $ModuleAuthorName. All rights reserved."
         }
