@@ -16,7 +16,7 @@ host. The module backups can be stored in a directory or compressed to a .7z fil
 
 ## Installation of HyperVBackup
 
-The module is published in the [PowerShell Gallery](https://www.powershellgallery.com/packages/SteamPS).
+The module is published in the [PowerShell Gallery](https://www.powershellgallery.com/packages/HyperVBackup).
 
 Run the following in an elevated prompt:
 
