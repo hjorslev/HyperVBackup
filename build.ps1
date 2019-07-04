@@ -28,17 +28,12 @@ if ($env:APPVEYOR_REPO_BRANCH -ne 'master') {
         $FunctionList = ((Get-ChildItem -Path .\$ModuleName\Public).BaseName)
         $Splat = @{
             'Path'              = $ManifestPath
-            'ModuleVersion'     = $NewVersion
+            'ModuleVersion'     = '1.0.0.0'
             'FunctionsToExport' = $FunctionList
             'Copyright'         = "(c) 2019-$( (Get-Date).Year ) $ModuleAuthorName. All rights reserved."
         }
 
         Update-ModuleManifest @Splat
-
-        (Get-Content -Path $ManifestPath) -replace "PSGet_$ModuleName", "$ModuleName" | Set-Content -Path $ManifestPath
-        (Get-Content -Path $ManifestPath) -replace 'NewManifest', $ModuleName | Set-Content -Path $ManifestPath
-        (Get-Content -Path $ManifestPath) -replace 'FunctionsToExport = ', 'FunctionsToExport = @(' | Set-Content -Path $ManifestPath -Force
-        (Get-Content -Path $ManifestPath) -replace "$($FunctionList[-1])'", "$($FunctionList[-1])')" | Set-Content -Path $ManifestPath -Force
     } catch {
         throw $_
     }
