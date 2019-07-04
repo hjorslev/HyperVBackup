@@ -12,7 +12,7 @@
 RootModule = 'HyperVBackup.psm1'
 
 # Version number of this module.
-ModuleVersion = '1.0.0.0'
+ModuleVersion = '1.0.0.1'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -30,8 +30,7 @@ CompanyName = 'hjorslev'
 Copyright = '(c) 2019-2019 Frederik Hjorslev Poulsen. All rights reserved.'
 
 # Description of the functionality provided by this module
-Description = 'HyperVBackup takes a backup virtual machines hosted in Hyper-V.
-    This is achived by exporting the VM and then, if chosen, compressed to a .7z archive.'
+Description = 'HyperVBackup takes a backup virtual machines hosted in Hyper-V. This is achived by exporting the VM and then, if chosen, compressed to a .7z archive.'
 
 # Minimum version of the Windows PowerShell engine required by this module
 # PowerShellVersion = ''
