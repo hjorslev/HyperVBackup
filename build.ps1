@@ -48,6 +48,13 @@ if ($env:APPVEYOR_REPO_BRANCH -ne 'master') {
     Import-Module -Name "$PSScriptRoot\$ModuleName" -Force
     New-MarkdownHelp -Module $ModuleName -OutputFolder '.\docs\' -Force
     New-ExternalHelp -Path '.\docs\' -OutputPath ".\docs\en-US\" -Force
+    Copy-Item -Path '.\README.md' -Destination 'docs\index.md'
+    Copy-Item -Path '.\CHANGELOG.md' -Destination 'docs\CHANGELOG.md'
+    Copy-Item -Path '.\CONTRIBUTING.md' -Destination 'docs\CONTRIBUTING.md'
+
+    # Build documentation
+    mkdocs build
+    Write-Host -Object 'Done building.documentation..' -ForegroundColor Green
     Write-Host -Object ''
 
     # Publish the new version to the PowerShell Gallery
