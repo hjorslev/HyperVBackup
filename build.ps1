@@ -47,7 +47,7 @@ if ($env:APPVEYOR_REPO_BRANCH -ne 'master') {
     Write-Host -Object "Building new function documentation" -ForegroundColor Yellow
     Import-Module -Name "$PSScriptRoot\$ModuleName" -Force
     New-MarkdownHelp -Module $ModuleName -OutputFolder '.\docs\' -Force
-    New-ExternalHelp -Path '.\docs\' -OutputPath ".\docs\en-US\" -Force
+    New-ExternalHelp -Path '.\docs\' -OutputPath ".\en-US\" -Force
     Copy-Item -Path '.\README.md' -Destination 'docs\index.md'
     Copy-Item -Path '.\CHANGELOG.md' -Destination 'docs\CHANGELOG.md'
     Copy-Item -Path '.\CONTRIBUTING.md' -Destination 'docs\CONTRIBUTING.md'
