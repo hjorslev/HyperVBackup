@@ -25,12 +25,15 @@
     Backup-VM -Name "GAME-01", "VPN-01" -BackupDestination 'D:\Backup\Hyper-V' -Retention 30
 
     .EXAMPLE
-    Get-VM | Backup-VM
+    Get-VM | Backup-VM -BackupDestination 'D:\Backup\Hyper-V'
 
-    Backups all VMs on the Hyper-V host.
+    Backups all VMs on the Hyper-V host and store them for 30 days.
 
     .NOTES
     Cmdlet must be executed from an elevated prompt.
+
+    .LINK
+    https://hjorslev.github.io/HyperVBackup/Backup-VM.html
 
     #>
 
