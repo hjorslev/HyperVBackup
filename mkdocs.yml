@@ -1,0 +1,14 @@
+site_name: HyperVBackup
+site_author: 'Frederik Hjorslev Poulsen'
+docs_dir: 'docs'
+site_dir: 'docs/html'
+use_directory_urls: false
+theme:
+  name: 'readthedocs'
+nav:
+- Home: 'index.md'
+- Generel:
+  - 'Backup-VM': 'Backup-VM.md'
+- About:
+  - 'Changelog': 'CHANGELOG.md'
+  - 'Contributing': 'CONTRIBUTING.md'
