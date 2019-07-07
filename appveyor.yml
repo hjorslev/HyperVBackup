@@ -8,7 +8,7 @@
 build: off
 
 # Version number
-version: 1.0.1.{build}
+version: 1.0.{build}
 
 # Only build the master branch
 branches:
