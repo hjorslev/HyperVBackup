@@ -4,11 +4,11 @@ $Public = @( Get-ChildItem -Path $PSScriptRoot\Public\*.ps1 -Recurse -ErrorActio
 $Private = @( Get-ChildItem -Path $PSScriptRoot\Private\*.ps1 -Recurse -ErrorAction SilentlyContinue )
 
 # Dot source the files
-Foreach ($Import in @($Public + $Private)) {
-    Try {
+foreach ($Import in @($Public + $Private)) {
+    try {
         . $Import.fullname
-    } Catch {
-        Write-Error -Message "Failed to import function $($Import.fullname): $_"
+    } catch {
+        Write-Error -Message "Failed to import function $($Import.FullName): $_"
     }
 }
 
