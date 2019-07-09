@@ -14,11 +14,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - New cmdlet
   - Remove-VMBackup - remove old backups of your VMs.
 
-### Fixed
-
-- Backup-VM
-  - Fix typos etc.
-
 ### Changed
 
 - Backup-VM
