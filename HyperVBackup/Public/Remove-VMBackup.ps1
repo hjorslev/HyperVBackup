@@ -12,7 +12,7 @@
     Specify the location of the stored backups.
 
     .PARAMETER Retention
-    Configure how long you want to keep the backups.
+    Configure how long you want to keep the backups. Default is 30 days.
 
     .PARAMETER Force
     The Force parameter allows the user to skip the "Should Continue" box.

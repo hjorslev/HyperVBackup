@@ -6,14 +6,14 @@
 Write-Host -Object ''
 
 # Install package providers for PowerShell Modules
-ForEach ($Provider in $PackageProviders) {
+foreach ($Provider in $PackageProviders) {
     If (-not (Get-PackageProvider $Provider -ErrorAction SilentlyContinue)) {
         Install-PackageProvider $Provider -Force -ForceBootstrap -Scope CurrentUser
     }
 }
 
 # Install the PowerShell Modules
-ForEach ($Module in $PowerShellModules) {
+foreach ($Module in $PowerShellModules) {
     If (-not (Get-Module -ListAvailable $Module -ErrorAction SilentlyContinue)) {
         Install-Module $Module -Scope CurrentUser -Force -Repository PSGallery
     }
@@ -24,4 +24,4 @@ ForEach ($Module in $PowerShellModules) {
 Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
 # Install Chocolatey packages
-ForEach ($Package in $ChocolateyPackages) { choco install $Package -y --no-progress }
+foreach ($Package in $ChocolateyPackages) { choco install $Package -y --no-progress }

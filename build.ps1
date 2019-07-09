@@ -54,7 +54,7 @@ if ($env:APPVEYOR_REPO_BRANCH -ne 'master') {
 
     # Build documentation
     mkdocs build
-    Write-Host -Object 'Done building.documentation..' -ForegroundColor Green
+    Write-Host -Object 'Done building documentation..' -ForegroundColor Green
     Write-Host -Object ''
 
     # Publish the new version to the PowerShell Gallery
