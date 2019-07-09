@@ -51,6 +51,10 @@ Do you want to remove any backups or files stored in $($Destination) older than 
 "@
         if ($null -ne $OldBackups) {
             if ($Force -or $PSCmdlet.ShouldContinue($RemoveOldSCMessage, 'Remove old backups?')) {
+                foreach ($OldBackup in $OldBackups) {
+                    Write-Verbose -Message "$($OldBackup) is older than $($Retention). Deleting file..."
+                }
+
                 $OldBackups | Remove-Item -Recurse -Force
             }
         }
