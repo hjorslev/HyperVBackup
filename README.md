@@ -30,7 +30,13 @@ Install-Module -Name HyperVBackup
 ## Using HyperVBackup
 
 ```powershell
-Get-VM | Backup-VM -BackupDestination - 'D:\Backup\Hyper-V'
+Get-VM | Backup-VM -Destination - 'D:\Backup\Hyper-V'
 ```
 
 Backups all VMs on a Hyper-V host.
+
+## Remove old backups
+
+```powershell
+Remove-VMBackup -Destination 'D:\Backup\Hyper-V'
+```

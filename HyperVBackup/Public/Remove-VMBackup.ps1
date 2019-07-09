@@ -33,6 +33,7 @@
     param (
 
         [Parameter(Mandatory = $true,
+            ValueFromPipeline = $true,
             ValueFromPipelineByPropertyName = $true)]
         [Alias('BackupDestination')]
         [string]$Destination,
@@ -52,7 +53,7 @@ Do you want to remove any backups or files stored in $($Destination) older than 
         if ($null -ne $OldBackups) {
             if ($Force -or $PSCmdlet.ShouldContinue($RemoveOldSCMessage, 'Remove old backups?')) {
                 foreach ($OldBackup in $OldBackups) {
-                    Write-Verbose -Message "$($OldBackup) is older than $($Retention). Deleting file..."
+                    Write-Verbose -Message "Deleteing $($OldBackup) because it is older than $($Retention)."
                 }
 
                 $OldBackups | Remove-Item -Recurse -Force
