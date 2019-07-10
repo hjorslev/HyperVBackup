@@ -1,39 +1,41 @@
 ---
 external help file: HyperVBackup-help.xml
 Module Name: HyperVBackup
-online version:
+online version: https://hjorslev.github.io/HyperVBackup/Backup-VM.html
 schema: 2.0.0
 ---
 
 # Backup-VM
 
 ## SYNOPSIS
-Perform a backup of Hyper-V Virtual Machines.
+Performs a backup of one or more Hyper-V Virtual Machines.
 
 ## SYNTAX
 
 ```
-Backup-VM [-Name] <String[]> [-BackupDestination] <String> [-Compress] [[-Retention] <Int32>] [-Force]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Backup-VM [-Name] <String[]> [-Destination] <String> [-CompressionLevel <String>] [-CompressionMethod <String>]
+ [-NoCompression] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Perform a backup of Hyper-V Virtual Machines.
+Performs a backup of one or more Hyper-V Virtual Machines.
 This module exports Virtual Machines and compress them using 7zip.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 ```
-Backup-VM -Name "GAME-01", "VPN-01" -BackupDestination 'D:\Backup\Hyper-V' -Retention 30
+Backup-VM -Name "GAME-01", "VPN-01" -Destination 'D:\Backup\Hyper-V'
 ```
+
+Backups two VMs (GAME-01 and VPN-01) to the destination 'D:\Backup\Hyper-V'.
 
 ### EXAMPLE 2
 ```
-Get-VM | Backup-VM
+Get-VM | Backup-VM -BackupDestination 'D:\Backup\Hyper-V'
 ```
 
-Backups all VMs on the Hyper-V host.
+Backups all VMs on the Hyper-V host to 'D:\Backup\Hyper-V'.
 
 ## PARAMETERS
 
@@ -53,13 +55,13 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### -BackupDestination
+### -Destination
 Specify the location of the backup.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: BackupDestination
 
 Required: True
 Position: 2
@@ -68,8 +70,38 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Compress
-Specify if you want to compress the backup into a .7z file.
+### -CompressionLevel
+Set the compression level of the archive.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: Normal
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CompressionMethod
+Set the compresseion method of the archive.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: Default
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -NoCompression
+Specify if you only want to export the VM and not archive it.
 
 ```yaml
 Type: SwitchParameter
@@ -79,21 +111,6 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Retention
-Configure how long you want to keep the backups.
-
-```yaml
-Type: Int32
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 3
-Default value: 30
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -152,6 +169,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
+Author: Frederik Hjorslev Poulsen
+
 Cmdlet must be executed from an elevated prompt.
 
 ## RELATED LINKS
+
+[https://hjorslev.github.io/HyperVBackup/Backup-VM.html](https://hjorslev.github.io/HyperVBackup/Backup-VM.html)
+
