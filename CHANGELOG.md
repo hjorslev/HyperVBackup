@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
   - Add link to online version of help.
 - New cmdlet
   - Remove-VMBackup - remove old backups of your VMs.
+- Add Pester test of PSScriptAnalyzer rules.
 
 ### Changed
 
