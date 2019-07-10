@@ -36,8 +36,8 @@ Describe "General project validation: $($ModuleName)" {
         It 'Should contains Company Name' { $ModuleInformation.CompanyName | Should not BeNullOrEmpty }
         It 'Should contains Description' { $ModuleInformation.Description | Should not BeNullOrEmpty }
         It 'Should contains Copyright' { $ModuleInformation.Copyright | Should not BeNullOrEmpty }
-        It 'Should contains License' { $ModuleInformation.LicenseURI | Should not BeNullOrEmpty }
-        It 'Should contains a Project Link' { $ModuleInformation.ProjectURI | Should not BeNullOrEmpty }
+        It 'Should contains License' { $ModuleInformation.PrivateData.PSData.LicenseURI | Should not BeNullOrEmpty }
+        It 'Should contains a Project Link' { $ModuleInformation.PrivateData.PSData.ProjectURI | Should not BeNullOrEmpty }
         It 'Should contains a Tags (For the PSGallery)' { $ModuleInformation.Tags.count | Should not BeNullOrEmpty }
 
         It "Should have equal number of Function Exported and the Public PS1 files found ($($ExportedFunctions.Count) and $($PublicFiles.count))" {
