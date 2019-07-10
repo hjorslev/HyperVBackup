@@ -29,7 +29,8 @@
     https://hjorslev.github.io/HyperVBackup/Remove-VMBackup.html
     #>
 
-    [CmdletBinding()]
+    [CmdletBinding(SupportsShouldProcess = $true,
+        ConfirmImpact = 'Medium')]
     param (
 
         [Parameter(Mandatory = $true,
