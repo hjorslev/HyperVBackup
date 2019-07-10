@@ -21,6 +21,9 @@
     .PARAMETER Compress
     Specify if you want to compress the backup into a .7z file.
 
+    .PARAMETER Force
+    The Force parameter allows the user to skip the "Should Continue" box.
+
     .EXAMPLE
     Backup-VM -Name "GAME-01", "VPN-01" -Destination 'D:\Backup\Hyper-V'
 
@@ -69,7 +72,10 @@
         [string]$CompressionMethod = 'Default',
 
         [Parameter(Mandatory = $false)]
-        [switch]$Compress = $true
+        [switch]$Compress = $true,
+
+        [Parameter(Mandatory = $false)]
+        [switch]$Force
     )
 
     process {
