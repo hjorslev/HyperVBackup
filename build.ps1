@@ -21,7 +21,7 @@ if ($env:APPVEYOR_REPO_BRANCH -ne 'master') {
         $Manifest = Test-ModuleManifest -Path $ManifestPath
         [System.Version]$Version = $Manifest.Version
         Write-Output -InputObject "Old Version: $Version"
-        [String]$NewVersion = New-Object -TypeName System.Version -ArgumentList ($Version.Major, $Version.Minor, $Version.Build, $env:APPVEYOR_BUILD_NUMBER)
+        [String]$NewVersion = New-Object -TypeName System.Version -ArgumentList ($Version.Major, $Version.Minor, $env:APPVEYOR_BUILD_NUMBER)
         Write-Output -InputObject "New Version: $NewVersion"
 
         # Update the manifest with the new version value and fix the weird string replace bug
