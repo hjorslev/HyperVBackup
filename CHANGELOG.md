@@ -19,6 +19,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - Backup-VM
   - Change parameter BackupDestination --> Destination.
   - Split the end section into its own cmdlet --> Remove-VMBackup.
+  - Parameter *Compress* changed to --> *NoCompression*. Default is now
+  backups are compressed.
 
 ### Removed
 

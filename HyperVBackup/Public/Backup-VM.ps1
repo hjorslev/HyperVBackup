@@ -18,8 +18,8 @@
     .PARAMETER CompressionMethod
     Set the compresseion method of the archive.
 
-    .PARAMETER Compress
-    Specify if you want to compress the backup into a .7z file.
+    .PARAMETER NoCompression
+    Specify if you only want to export the VM and not archive it.
 
     .PARAMETER Force
     The Force parameter allows the user to skip the "Should Continue" box.
@@ -65,14 +65,14 @@
 
         [Parameter(Mandatory = $false)]
         [ValidateSet('None', 'Fast', 'Low', 'Normal', 'High', 'Ultra')]
-        [string]$CompressionLevel,
+        [string]$CompressionLevel = 'Normal',
 
         [Parameter(Mandatory = $false)]
         [ValidateSet('Copy', 'Deflate', 'Deflate64', 'BZip2', 'Lzma', 'Lzma2', 'Ppmd', 'Default')]
         [string]$CompressionMethod = 'Default',
 
         [Parameter(Mandatory = $false)]
-        [switch]$Compress = $true,
+        [switch]$NoCompression,
 
         [Parameter(Mandatory = $false)]
         [switch]$Force
@@ -91,7 +91,7 @@ Do you want to backup the following Hyper-V machine:
             # Exporting the VM.
             Export-VM -Name $Name -Path "$($Destination)\$($Name)-$($TimeStamp)"
 
-            if ($Compress) {
+            if (-not $NoCompression) {
                 # Splat with parameters
                 $CompressParameters = @{
                     'Path'            = "$($Destination)\$($Name)-$($TimeStamp)";
