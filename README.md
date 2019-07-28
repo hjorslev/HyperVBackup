@@ -1,8 +1,13 @@
 # HyperVBackup
 
-[![Build status](https://img.shields.io/appveyor/ci/hjorslev/HyperVBackup.svg?style=for-the-badge)](https://ci.appveyor.com/project/hjorslev/HyperVBackup)
-[![PowerShellGallery Version](https://img.shields.io/powershellgallery/v/HyperVBackup.svg?style=for-the-badge)](https://www.powershellgallery.com/packages/HyperVBackup)
-[![PowerShellGallery Downloads](https://img.shields.io/powershellgallery/dt/HyperVBackup.svg?style=for-the-badge)](https://www.powershellgallery.com/packages/HyperVBackup)
+## Module Status
+
+[![AppVeyor master](https://img.shields.io/appveyor/ci/hjorslev/HyperVBackup/master?label=MASTER&logo=appveyor&style=for-the-badge)](https://ci.appveyor.com/project/hjorslev/HyperVBackup)
+[![AppVeyor tests (master)](https://img.shields.io/appveyor/tests/hjorslev/HyperVBackup/master?label=MASTER&logo=appveyor&style=for-the-badge)](https://ci.appveyor.com/project/hjorslev/HyperVBackup/build/tests)
+[![AppVeyor dev](https://img.shields.io/appveyor/ci/hjorslev/HyperVBackup/DEV?label=DEV&logo=appveyor&style=for-the-badge)](https://ci.appveyor.com/project/hjorslev/HyperVBackup)
+[![AppVeyor tests (dev)](https://img.shields.io/appveyor/tests/hjorslev/HyperVBackup/dev?label=DEV&logo=appveyor&style=for-the-badge)](https://ci.appveyor.com/project/hjorslev/HyperVBackup/build/tests)
+[![PowerShell Version](https://img.shields.io/powershellgallery/v/HyperVBackup.svg?style=for-the-badge)](https://www.powershellgallery.com/packages/HyperVBackup)
+[![PowerShell Gallery](https://img.shields.io/powershellgallery/dt/HyperVBackup?style=for-the-badge)](https://www.powershellgallery.com/packages/HyperVBackup)
 
 ## Synopsis
 
