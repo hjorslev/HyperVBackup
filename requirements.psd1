@@ -1,7 +1,7 @@
 ﻿@{
     # Some defaults for all dependencies
     PSDependOptions    = @{
-        Target     = '$ENV:USERPROFILE\Documents\WindowsPowerShell\Modules'
+        Target     = '$env:USERPROFILE\Documents\WindowsPowerShell\Modules'
         AddToPath  = $true
         Parameters = @{
             Force = $true
@@ -28,7 +28,6 @@
     'posh-git'         = @{ DependencyType = 'PSGalleryNuget'; version = 'latest' }
     'PSDeploy'         = @{ DependencyType = 'PSGalleryNuget'; version = 'latest' }
     'psake'            = @{ DependencyType = 'PSGalleryNuget'; version = 'latest' }
-    'PSGitHub'         = @{ DependencyType = 'PSGalleryNuget'; version = 'latest' }
     'PSScriptAnalyzer' = @{ DependencyType = 'PSGalleryNuget'; version = 'latest' }
     'powershell-yaml'  = @{ DependencyType = 'PSGalleryNuget'; version = 'latest' }
 }
